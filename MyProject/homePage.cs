@@ -158,71 +158,84 @@ namespace MyProject
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            String fistName = txtFistName.Text;
-            String lastName = txtLastName.Text;
-            String birthDay = dateTimePicker.Text;
-            String gender = "male";
-            if (radioButton1.Checked)
+            if (!ValidateInputs())
             {
-                gender = "male";
+                MessageBox.Show("Please fill in all required fields.", "Registration Student", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else if (radioButton2.Checked)
-            {
-                gender = "female";
-            }
-
-            String address = txtAddress.Text;
-            String email = txtEmail.Text;
-            String mobileNo = txtMobileNo.Text;
-            String homeNo = txtHomeNo.Text;
-            String perantName = txtParentName.Text;
-            String nic = txtNic.Text;
-            String perantContact = txtParentContact.Text;
 
             string connectionString = "server=localhost;database=my_project;uid=root;password=1234;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
 
-            try
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                connection.Open();
-                string query = "INSERT INTO student(first_name,last_name,dateOfBirth,gender,address,email,mobilePhone," +
-                    "homePhone,parentName,nic,contactNo) VALUES(@fistName, @lastName, @birthDay, @gender, @address, @email, @mobileNo, @homeNo, @perantName, @nic, @perantContact)";
-                MySqlCommand command = new MySqlCommand(query, connection);
-
-                command.Parameters.AddWithValue("@fistName", fistName);
-                command.Parameters.AddWithValue("@lastName", lastName);
-                command.Parameters.AddWithValue("@birthDay", birthDay);
-                command.Parameters.AddWithValue("@gender", gender);
-                command.Parameters.AddWithValue("@address", address);
-                command.Parameters.AddWithValue("@email", email);
-                command.Parameters.AddWithValue("@mobileNo", mobileNo);
-                command.Parameters.AddWithValue("@homeNo", homeNo);
-                command.Parameters.AddWithValue("@perantName", perantName);
-                command.Parameters.AddWithValue("@nic", nic);
-                command.Parameters.AddWithValue("@perantContact", perantContact);
-
-                int reader = command.ExecuteNonQuery();
-
-                if (reader > 0)
+                try
                 {
-                    MessageBox.Show("Record added successfully..!", "Ragistration Student.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearData();
+                    connection.Open();
+                    string query = "INSERT INTO student(first_name, last_name, dateOfBirth, gender, address, email, mobilePhone, " +
+                        "homePhone, parentName, nic, contactNo) VALUES(@firstName, @lastName, @birthDay, @gender, @address, @email, " +
+                        "@mobileNo, @homeNo, @parentName, @nic, @parentContact)";
+                    MySqlCommand command = new MySqlCommand(query, connection);
 
+                    command.Parameters.AddWithValue("@firstName", txtFistName.Text);
+                    command.Parameters.AddWithValue("@lastName", txtLastName.Text);
+                    command.Parameters.AddWithValue("@birthDay", dateTimePicker.Text);
+                    command.Parameters.AddWithValue("@gender", radioButton1.Checked ? "male" : "female");
+                    command.Parameters.AddWithValue("@address", txtAddress.Text);
+                    command.Parameters.AddWithValue("@email", txtEmail.Text);
+                    command.Parameters.AddWithValue("@mobileNo", txtMobileNo.Text);
+                    command.Parameters.AddWithValue("@homeNo", txtHomeNo.Text);
+                    command.Parameters.AddWithValue("@parentName", txtParentName.Text);
+                    command.Parameters.AddWithValue("@nic", txtNic.Text);
+                    command.Parameters.AddWithValue("@parentContact", txtParentContact.Text);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Record added successfully.", "Registration Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Record not added.", "Registration Student", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Somthing Wrong..!", "Ragistration Student.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Console.WriteLine("Error: " + ex.Message);
+                    MessageBox.Show("An error occurred. Please try again.", "Registration Student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Ragistration Student.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            finally
-            {
-                connection.Close();
             }
         }
+
+        private bool ValidateInputs()
+        {
+            if (string.IsNullOrWhiteSpace(txtFistName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) ||
+                string.IsNullOrWhiteSpace(dateTimePicker.Text) || (!radioButton1.Checked && !radioButton2.Checked) ||
+                string.IsNullOrWhiteSpace(txtAddress.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtMobileNo.Text) || string.IsNullOrWhiteSpace(txtParentName.Text) ||
+                string.IsNullOrWhiteSpace(txtNic.Text) || string.IsNullOrWhiteSpace(txtParentContact.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void ClearData()
+        {
+            txtFistName.Clear();
+            txtLastName.Clear();
+            dateTimePicker.Value = DateTime.Now;
+            radioButton1.Checked = true;
+            txtAddress.Clear();
+            txtEmail.Clear();
+            txtMobileNo.Clear();
+            txtHomeNo.Clear();
+            txtParentName.Clear();
+            txtNic.Clear();
+            txtParentContact.Clear();
+        }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
