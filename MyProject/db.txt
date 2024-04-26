@@ -1,0 +1,28 @@
+create database my_project;
+use my_project;
+
+show tables;
+create table login(
+user_name varchar(20),
+password varchar(20)
+);
+
+create table student(
+regNo int AUTO_INCREMENT primary key,
+first_name varchar(50), 
+last_name varchar(50),
+dateOfBirth varchar(50),
+gender varchar(50),
+address varchar(50),
+email varchar(50),
+mobilePhone int,
+homePhone int,
+parentName varchar(50),
+nic varchar(50),
+contactNo int
+);
+
+show tables;
+
+insert into login values("lashadi", "1234");
+

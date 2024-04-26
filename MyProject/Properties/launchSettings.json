@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MyProject": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\piyumal\\Desktop\\lashadi\\MyProject\\MyProject"
+    }
+  }
+}
