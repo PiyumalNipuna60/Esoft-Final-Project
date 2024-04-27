@@ -24,7 +24,7 @@ namespace MyProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (userName.Text == "" && password.Text == "")
+            if (userName.Text == "lashadi" && password.Text == "1234")
             {
                 homePage homePage = new homePage();
                 homePage.Show();

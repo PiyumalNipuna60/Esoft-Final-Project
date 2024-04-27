@@ -1783,11 +1783,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\piyumal\\Desktop\\lashadi\\MyProject\\MyProject\\MyProject.csproj",
+      "projectUniqueName": "C:\\Users\\piyumal\\Desktop\\LASHADI 2\\Esoft-Final-Project\\MyProject\\MyProject.csproj",
       "projectName": "MyProject",
-      "projectPath": "C:\\Users\\piyumal\\Desktop\\lashadi\\MyProject\\MyProject\\MyProject.csproj",
+      "projectPath": "C:\\Users\\piyumal\\Desktop\\LASHADI 2\\Esoft-Final-Project\\MyProject\\MyProject.csproj",
       "packagesPath": "C:\\Users\\piyumal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\piyumal\\Desktop\\lashadi\\MyProject\\MyProject\\obj\\",
+      "outputPath": "C:\\Users\\piyumal\\Desktop\\LASHADI 2\\Esoft-Final-Project\\MyProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\piyumal\\AppData\\Roaming\\NuGet\\NuGet.Config",

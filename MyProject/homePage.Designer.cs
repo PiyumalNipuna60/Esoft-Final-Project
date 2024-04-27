@@ -63,6 +63,7 @@
             label4 = new Label();
             txtFistName = new TextBox();
             label3 = new Label();
+            logOut = new Button();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -112,6 +113,7 @@
             btnView.TabIndex = 20;
             btnView.Text = "View";
             btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnView_Click;
             // 
             // btnClear
             // 
@@ -432,12 +434,24 @@
             label3.Text = "First name : ";
             label3.Click += label3_Click;
             // 
+            // logOut
+            // 
+            logOut.BackColor = Color.Transparent;
+            logOut.Location = new Point(692, 53);
+            logOut.Name = "logOut";
+            logOut.Size = new Size(94, 29);
+            logOut.TabIndex = 2;
+            logOut.Text = "Log Out";
+            logOut.UseVisualStyleBackColor = false;
+            logOut.Click += button1_Click_1;
+            // 
             // homePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(844, 992);
+            Controls.Add(logOut);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "homePage";
@@ -493,5 +507,6 @@
         private Button btnClear;
         private Button btnDelete;
         private Button btnView;
+        private Button logOut;
     }
 }
