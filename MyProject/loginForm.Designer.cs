@@ -41,6 +41,7 @@
             label4 = new Label();
             label2 = new Label();
             label1 = new Label();
+            signInButton = new Button();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(signInButton);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(button1);
             groupBox2.Controls.Add(loginButton);
@@ -173,6 +175,17 @@
             label1.TabIndex = 0;
             label1.Text = "Login";
             // 
+            // signInButton
+            // 
+            signInButton.BackColor = Color.Coral;
+            signInButton.Location = new Point(350, 429);
+            signInButton.Name = "signInButton";
+            signInButton.Size = new Size(94, 34);
+            signInButton.TabIndex = 7;
+            signInButton.Text = "sign in";
+            signInButton.UseVisualStyleBackColor = false;
+            signInButton.Click += signInButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -204,5 +217,6 @@
         private Label label3;
         private Button button1;
         private Button button2;
+        private Button signInButton;
     }
 }

@@ -67,3 +67,4 @@ C:\Users\piyumal\Desktop\LASHADI 2\Esoft-Final-Project\MyProject\obj\Debug\net8.
 C:\Users\piyumal\Desktop\LASHADI 2\Esoft-Final-Project\MyProject\obj\Debug\net8.0-windows\MyProject.genruntimeconfig.cache
 C:\Users\piyumal\Desktop\LASHADI 2\Esoft-Final-Project\MyProject\obj\Debug\net8.0-windows\ref\MyProject.dll
 C:\Users\piyumal\Desktop\LASHADI 2\Esoft-Final-Project\MyProject\obj\Debug\net8.0-windows\MyProject.viewAllData.resources
+C:\Users\piyumal\Desktop\LASHADI 2\Esoft-Final-Project\MyProject\obj\Debug\net8.0-windows\MyProject.signInForm.resources

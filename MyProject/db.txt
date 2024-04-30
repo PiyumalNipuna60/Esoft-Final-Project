@@ -3,6 +3,8 @@ use my_project;
 
 show tables;
 create table login(
+address varchar(10),
+contact varchar(10),
 user_name varchar(20),
 password varchar(20)
 );
@@ -24,5 +26,5 @@ contactNo int
 
 show tables;
 
-insert into login values("lashadi", "1234");
+insert into login values("galle","0758545856","lashadi", "1234");
 

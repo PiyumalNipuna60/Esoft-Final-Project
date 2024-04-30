@@ -85,7 +85,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ActiveBorder;
+            groupBox1.BackColor = SystemColors.InactiveBorder;
             groupBox1.Controls.Add(btnView);
             groupBox1.Controls.Add(btnClear);
             groupBox1.Controls.Add(btnDelete);
@@ -107,56 +107,62 @@
             // 
             // btnView
             // 
+            btnView.BackColor = Color.Cyan;
             btnView.Location = new Point(375, 811);
             btnView.Name = "btnView";
             btnView.Size = new Size(94, 29);
             btnView.TabIndex = 20;
             btnView.Text = "View";
-            btnView.UseVisualStyleBackColor = true;
+            btnView.UseVisualStyleBackColor = false;
             btnView.Click += btnView_Click;
             // 
             // btnClear
             // 
+            btnClear.BackColor = Color.SandyBrown;
             btnClear.Location = new Point(612, 811);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(94, 29);
             btnClear.TabIndex = 19;
             btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += button1_Click;
             // 
             // btnDelete
             // 
+            btnDelete.BackColor = Color.FromArgb(255, 128, 128);
             btnDelete.Location = new Point(262, 811);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 18;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
+            btnUpdate.BackColor = Color.FromArgb(255, 255, 128);
             btnUpdate.Location = new Point(152, 811);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
             btnUpdate.TabIndex = 17;
             btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // btnRegister
             // 
+            btnRegister.BackColor = Color.PowderBlue;
             btnRegister.Location = new Point(41, 811);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(94, 29);
             btnRegister.TabIndex = 16;
             btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
             // groupBox4
             // 
+            groupBox4.BackColor = SystemColors.InactiveCaption;
             groupBox4.Controls.Add(txtNic);
             groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(txtParentName);
@@ -224,6 +230,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = SystemColors.InactiveCaption;
             groupBox3.Controls.Add(txtHomeNo);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(txtMobileNo);
@@ -333,6 +340,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = SystemColors.InactiveCaption;
             groupBox2.Controls.Add(radioButton2);
             groupBox2.Controls.Add(radioButton1);
             groupBox2.Controls.Add(Gender);
@@ -436,7 +444,7 @@
             // 
             // logOut
             // 
-            logOut.BackColor = Color.Transparent;
+            logOut.BackColor = SystemColors.GradientActiveCaption;
             logOut.Location = new Point(692, 53);
             logOut.Name = "logOut";
             logOut.Size = new Size(94, 29);
